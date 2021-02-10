@@ -21,7 +21,7 @@ var getCityWeather = function(city) {
             var latitude = response.coord.lat
             var longitude = response.coord.lon
             
-            return fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247')
+            return fetch('http://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247')
                 .then(function(response) {
                     return response.json()
                 })
@@ -86,7 +86,7 @@ var getCityWeather = function(city) {
 
                     //forecast day 4
                     document.querySelector("#day-4-date").textContent = date[4]
-                    document.querySelector("#day-4-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-4-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png")
                     document.querySelector("#day-4-temp").textContent = "Temp: " + response.daily[4].temp.day + "°F"
                     document.querySelector("#day-4-humidity").textContent = "Humidity: " + response.daily[4].humidity + "%"
 

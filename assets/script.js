@@ -5,7 +5,7 @@ var emptyArray = []
 
 var getCityWeather = function(city) {
 
-    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247"
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247"
     
     fetch(apiUrl).then(function(response) {
         response.json().then(function(response) {

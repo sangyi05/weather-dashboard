@@ -5,14 +5,14 @@ var emptyArray = []
 
 var getCityWeather = function(city) {
 
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247"
+    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=1bb2fcdac1987e229e0a7f65f71a5247"
     
     fetch(apiUrl).then(function(response) {
         response.json().then(function(response) {
             weatherToday = response.main
             //for weather icon
             //document.querySelector("#weather-icon").setAttribute('src', response.weather[0].icon)
-            document.querySelector("#weather-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png") 
+            document.querySelector("#weather-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png") 
             document.querySelector("#feels-like").textContent = "Temperature: " + response.main.feels_like + "°F"
             document.querySelector("#humidity").textContent = "Humidity: " + response.main.humidity + "%"
             document.querySelector("#wind-speed").textContent = "Wind Speed: " + response.wind.speed
@@ -68,31 +68,31 @@ var getCityWeather = function(city) {
                     document.querySelector("#forecast-title").textContent = "5-Day Forecast: "
                     //forecast day 1
                     document.querySelector("#day-1-date").textContent = date[1]
-                    document.querySelector("#day-1-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-1-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png")
                     document.querySelector("#day-1-temp").textContent = "Temp: " + response.daily[1].temp.day + "°F"
                     document.querySelector("#day-1-humidity").textContent = "Humidity: " + response.daily[1].humidity + "%"
                     
                     //forecast day 2
                     document.querySelector("#day-2-date").textContent = date[2]
-                    document.querySelector("#day-2-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-2-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon + "@2x.png")
                     document.querySelector("#day-2-temp").textContent = "Temp: " + response.daily[2].temp.day + "°F"
                     document.querySelector("#day-2-humidity").textContent = "Humidity: " + response.daily[2].humidity + "%"
 
                     //forecast day 3
                     document.querySelector("#day-3-date").textContent = date[3]
-                    document.querySelector("#day-3-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-3-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png")
                     document.querySelector("#day-3-temp").textContent = "Temp: " + response.daily[3].temp.day + "°F"
                     document.querySelector("#day-3-humidity").textContent = "Humidity: " + response.daily[3].humidity + "%"
 
                     //forecast day 4
                     document.querySelector("#day-4-date").textContent = date[4]
-                    document.querySelector("#day-4-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-4-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png")
                     document.querySelector("#day-4-temp").textContent = "Temp: " + response.daily[4].temp.day + "°F"
                     document.querySelector("#day-4-humidity").textContent = "Humidity: " + response.daily[4].humidity + "%"
 
                     //forecast day 5
                     document.querySelector("#day-5-date").textContent = date[5]
-                    document.querySelector("#day-5-icon").setAttribute('src', "https://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png")
+                    document.querySelector("#day-5-icon").setAttribute('src', "http://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png")
                     document.querySelector("#day-5-temp").textContent = "Temp: " + response.daily[5].temp.day + "°F"
                     document.querySelector("#day-5-humidity").textContent = "Humidity: " + response.daily[5].humidity + "%"
                 })
